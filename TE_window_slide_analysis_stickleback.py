@@ -35,10 +35,8 @@ te = pd.DataFrame({
     'age_weighted': age_weighted
 })
 
-# Add the names of the scaffolds as a column (if needed)
+# Add the names of the scaffolds as a column
 te['names_scafs'] = te.index
-
-# Write to a tmp file
 te.to_csv("temp_te.txt", sep="\t", index=False)
 te = pd.read_csv("temp_te.txt", sep="\t", header=None)
 stick_tube = pd.read_csv("stick_tube_mappings.txt", sep="\t", header=True)
@@ -77,11 +75,9 @@ res1 = pd.DataFrame(index=range(10000), columns=range(7))
 count2 = 1
 stick_all = None
 
-import pandas as pd
 import numpy as np
 
-
-stick_window = 2000000  # Example window size
+stick_window = 2000000 
 
 # the_chroms, te, not_moved, res_not_te, dups_not_te, missing_not_te
 
